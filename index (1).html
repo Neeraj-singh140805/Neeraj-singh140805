@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neeraj Singh (Neeraj-singh140805) — DVA Portfolio</title>
+    <style>
+        /* ── GitHub Dark Variables ── */
+        :root {
+            --gh-bg:            #0d1117;
+            --gh-bg-secondary:  #161b22;
+            --gh-border:        #30363d;
+            --gh-text-main:     #c9d1d9;
+            --gh-text-muted:    #8b949e;
+            --gh-link:          #58a6ff;
+            --gh-btn-bg:        #21262d;
+            --gh-btn-hover:     #30363d;
+            --gh-btn-primary:   #238636;
+            --gh-btn-primary-hover: #2ea043;
+            --gh-green:         #2ea043;
+            --gh-orange:        #f78166;
+            --gh-yellow:        #e3b341;
+            --gh-blue:          #58a6ff;
+            --gh-purple:        #bc8cff;
+            --gh-sql:           #e34c26;
+
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--gh-bg);
+            color: var(--gh-text-main);
+            line-height: 1.5;
+            font-size: 14px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a { text-decoration: none; color: var(--gh-link); }
+        a:hover { text-decoration: underline; }
+
+        /* ── HEADER ── */
+        header {
+            background: #010409;
+            border-bottom: 1px solid var(--gh-border);
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-logo svg { fill: white; width: 32px; height: 32px; display: block; }
+        .header-right { font-size: 13px; color: var(--gh-text-muted); }
+        .header-right span { color: var(--gh-text-main); font-weight: 600; }
+
+        /* ── LAYOUT ── */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 24px;
+            display: flex;
+            gap: 24px;
+            flex-grow: 1;
+        }
+
+        /* ── SIDEBAR ── */
+        .sidebar { width: 296px; flex-shrink: 0; }
+
+        .avatar-wrap { position: relative; display: inline-block; margin-bottom: 16px; }
+        .avatar {
+            width: 100%; max-width: 220px;
+            aspect-ratio: 1; border-radius: 50%;
+            border: 2px solid var(--gh-border);
+            object-fit: cover; display: block;
+        }
+        .avatar-status {
+            position: absolute; bottom: 8px; right: 8px;
+            width: 20px; height: 20px; border-radius: 50%;
+            background: var(--gh-green);
+            border: 3px solid var(--gh-bg);
+        }
+
+        .vcard-fullname { font-size: 24px; font-weight: 600; color: var(--gh-text-main); }
+        .vcard-username { font-size: 20px; font-weight: 300; color: var(--gh-text-muted); margin-bottom: 12px; }
+        .vcard-bio      { font-size: 14px; color: var(--gh-text-main); margin-bottom: 16px; line-height: 1.6; }
+
+        .btn-profile {
+            display: block; width: 100%; text-align: center;
+            background: var(--gh-btn-bg); border: 1px solid var(--gh-border);
+            color: var(--gh-text-main); padding: 5px 16px; border-radius: 6px;
+            font-weight: 500; cursor: pointer; transition: .2s; margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .btn-profile:hover { background: var(--gh-btn-hover); text-decoration: none; }
+
+        .vcard-details { list-style: none; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--gh-border); }
+        .vcard-details li { display: flex; align-items: center; gap: 8px; margin-top: 6px; font-size: 14px; color: var(--gh-text-main); }
+        .vcard-details svg { fill: var(--gh-text-muted); width: 16px; height: 16px; flex-shrink: 0; }
+
+        .sidebar-section { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--gh-border); }
+        .sidebar-section:last-child { border-bottom: none; }
+        .sidebar-section h2 { font-size: 14px; font-weight: 600; margin-bottom: 10px; color: var(--gh-text-main); }
+
+        .skills-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+        .badge {
+            display: flex; align-items: center; gap: 5px;
+            border: 1px solid var(--gh-border); padding: 3px 10px; border-radius: 2em;
+            font-size: 12px; font-weight: 500; color: var(--gh-text-muted); white-space: nowrap;
+        }
+        .badge-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+        .dot-excel   { background: var(--gh-green); }
+        .dot-tableau { background: var(--gh-orange); }
+        .dot-sql     { background: var(--gh-sql); }
+        .dot-python  { background: var(--gh-yellow); }
+        .dot-misc    { background: var(--gh-purple); }
+
+        /* Stats bar */
+        .stats-row { display: flex; gap: 16px; flex-wrap: wrap; }
+        .stat-item { display: flex; flex-direction: column; }
+        .stat-num { font-size: 18px; font-weight: 700; color: var(--gh-text-main); }
+        .stat-lbl { font-size: 11px; color: var(--gh-text-muted); text-transform: uppercase; letter-spacing: .5px; }
+
+        /* ── MAIN CONTENT ── */
+        .content { flex-grow: 1; min-width: 0; }
+
+        /* Tabs */
+        .UnderlineNav {
+            display: flex; border-bottom: 1px solid var(--gh-border); margin-bottom: 20px; gap: 4px;
+        }
+        .UnderlineNav-item {
+            padding: 8px 16px; font-size: 14px; color: var(--gh-text-main); cursor: default;
+            border-bottom: 2px solid #f78166; display: flex; align-items: center; gap: 8px; font-weight: 600;
+        }
+        .UnderlineNav-item svg { fill: var(--gh-text-muted); width: 16px; height: 16px; }
+        .repo-count { background: rgba(110,118,129,.4); border-radius: 2em; padding: 0 7px; font-size: 12px; }
+
+        /* Filter bar */
+        .repo-filter-bar {
+            display: flex; gap: 12px; margin-bottom: 24px; align-items: center; flex-wrap: wrap;
+            padding-bottom: 16px; border-bottom: 1px solid var(--gh-border);
+        }
+        .local-search {
+            background: var(--gh-bg); border: 1px solid var(--gh-border);
+            padding: 6px 12px; border-radius: 6px; color: var(--gh-text-main);
+            width: 100%; max-width: 320px; font-size: 14px; outline: none; transition: border-color .2s;
+        }
+        .local-search:focus { border-color: var(--gh-link); box-shadow: 0 0 0 3px rgba(88,166,255,.25); }
+        .local-search::placeholder { color: var(--gh-text-muted); }
+
+        .filter-buttons { display: flex; gap: 6px; flex-wrap: wrap; }
+        .filter-btn {
+            background: var(--gh-btn-bg); border: 1px solid var(--gh-border);
+            color: var(--gh-text-main); padding: 4px 14px; border-radius: 2em;
+            font-size: 13px; font-weight: 500; cursor: pointer; transition: .2s;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .filter-btn:hover { background: var(--gh-btn-hover); }
+        .filter-btn.active { background: var(--gh-link); color: #fff; border-color: var(--gh-link); }
+        .filter-btn .fdot { width: 8px; height: 8px; border-radius: 50%; }
+
+        /* Repo Grid */
+        .repo-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 32px;
+        }
+
+        /* Repo Card */
+        .repo-card {
+            border: 1px solid var(--gh-border); border-radius: 6px;
+            background: var(--gh-bg); display: flex; flex-direction: column;
+            cursor: pointer; transition: border-color .2s, transform .15s; overflow: hidden;
+        }
+        .repo-card:hover { border-color: var(--gh-text-muted); transform: translateY(-2px); }
+
+        .card-cover-image { width: 100%; height: 140px; object-fit: cover; border-bottom: 1px solid var(--gh-border); background: var(--gh-bg-secondary); }
+        
+        /* SVG cover fallback */
+        .card-cover-svg {
+            width: 100%; height: 140px; border-bottom: 1px solid var(--gh-border);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 40px; user-select: none;
+        }
+        .cover-excel   { background: linear-gradient(135deg, #0a2a14 0%, #1a5c2a 100%); }
+        .cover-tableau { background: linear-gradient(135deg, #2a0a06 0%, #5c1a10 100%); }
+        .cover-sql     { background: linear-gradient(135deg, #1a0a2a 0%, #3a1060 100%); }
+        .cover-python  { background: linear-gradient(135deg, #1a1a0a 0%, #3d3a08 100%); }
+
+        .repo-card-body { padding: 16px; display: flex; flex-direction: column; flex-grow: 1; }
+        .repo-header    { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; gap: 8px; }
+        .repo-title-group { display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap; }
+        .repo-title-group svg { fill: var(--gh-text-muted); width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0; }
+        .repo-title  { font-size: 14px; font-weight: 600; color: var(--gh-link); word-break: break-word; }
+        .repo-badge  { border: 1px solid var(--gh-border); color: var(--gh-text-muted); font-size: 12px; padding: 0 7px; border-radius: 2em; line-height: 18px; white-space: nowrap; }
+
+        .repo-desc  { color: var(--gh-text-muted); font-size: 12px; margin-bottom: 14px; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .repo-tags  { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+        .topic-tag  { background: rgba(56,139,253,.1); color: var(--gh-link); font-size: 12px; font-weight: 500; padding: 0 10px; border-radius: 2em; line-height: 22px; white-space: nowrap; }
+
+        .repo-footer { display: flex; align-items: center; gap: 16px; font-size: 12px; color: var(--gh-text-muted); flex-wrap: wrap; }
+        .lang-color  { width: 12px; height: 12px; border-radius: 50%; display: inline-block; vertical-align: middle; }
+        .lang-excel   { background: var(--gh-green); }
+        .lang-tableau { background: var(--gh-orange); }
+        .lang-sql     { background: var(--gh-sql); }
+        .lang-python  { background: var(--gh-yellow); }
+
+        /* Contribution Graph */
+        .contrib-graph { border: 1px solid var(--gh-border); border-radius: 6px; padding: 16px; margin-bottom: 40px; overflow-x: hidden; }
+        .contrib-title { font-size: 14px; font-weight: 400; margin-bottom: 12px; color: var(--gh-text-main); }
+        .graph-squares { display: flex; flex-wrap: wrap; gap: 3px; }
+        .g-sq  { width: 11px; height: 11px; border-radius: 2px; background: #161b22; outline: 1px solid rgba(255,255,255,.05); outline-offset: -1px; }
+        .g-l1  { background: #0e4429; } .g-l2 { background: #006d32; } .g-l3 { background: #26a641; } .g-l4 { background: #39d353; }
+        .graph-legend { display: flex; align-items: center; gap: 4px; margin-top: 8px; font-size: 11px; color: var(--gh-text-muted); justify-content: flex-end; }
+
+        /* No Results */
+        .no-results { display: none; padding: 40px; text-align: center; color: var(--gh-text-muted); border: 1px dashed var(--gh-border); border-radius: 6px; grid-column: span 2; }
+
+        /* Footer */
+        .site-footer { border-top: 1px solid var(--gh-border); padding: 40px 24px; text-align: center; font-size: 12px; color: var(--gh-text-muted); background: var(--gh-bg); }
+        .site-footer a { color: var(--gh-link); margin: 0 10px; }
+
+        /* ── MODAL ── */
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 1000;
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; visibility: hidden; transition: .2s; padding: 16px;
+        }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-content {
+            background: var(--gh-bg-secondary); border: 1px solid var(--gh-border); border-radius: 12px;
+            width: 100%; max-width: 620px; max-height: 90vh; display: flex; flex-direction: column;
+            transform: scale(.97); transition: .2s; box-shadow: 0 0 0 1px #30363d, 0 16px 32px rgba(0,0,0,.85);
+        }
+        .modal-overlay.active .modal-content { transform: scale(1); }
+
+        .modal-header { padding: 16px; border-bottom: 1px solid var(--gh-border); display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+        .modal-title  { font-size: 16px; font-weight: 600; word-break: break-word; padding-right: 12px; }
+        .modal-category { font-size: 12px; padding: 2px 10px; border-radius: 2em; border: 1px solid var(--gh-border); color: var(--gh-text-muted); margin-left: 8px; }
+        .close-btn    { background: none; border: none; color: var(--gh-text-muted); cursor: pointer; padding: 4px; flex-shrink: 0; }
+        .close-btn:hover { color: var(--gh-text-main); }
+        .close-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+        .modal-body   { padding: 16px; overflow-y: auto; flex-grow: 1; }
+        .modal-cover  { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 16px; border: 1px solid var(--gh-border); display: flex; align-items: center; justify-content: center; font-size: 64px; }
+        .modal-desc   { font-size: 14px; color: var(--gh-text-main); line-height: 1.6; margin-bottom: 12px; }
+        .modal-tags   { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+
+        .modal-footer { padding: 16px; border-top: 1px solid var(--gh-border); display: flex; justify-content: flex-end; gap: 8px; flex-shrink: 0; flex-wrap: wrap; }
+        .btn-cancel   { background: var(--gh-btn-bg); border: 1px solid var(--gh-border); color: var(--gh-text-main); padding: 5px 16px; border-radius: 6px; font-weight: 500; cursor: pointer; }
+        .btn-cancel:hover { background: var(--gh-btn-hover); }
+        .btn-primary  { background: var(--gh-btn-primary); border: 1px solid rgba(240,246,252,.1); color: #fff; padding: 5px 16px; border-radius: 6px; font-weight: 500; cursor: pointer; text-decoration: none; text-align: center; }
+        .btn-primary:hover { background: var(--gh-btn-primary-hover); text-decoration: none; }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .container { flex-direction: column; padding: 16px; gap: 16px; }
+            .sidebar { width: 100%; }
+            .avatar { max-width: 80px; }
+            .avatar-wrap { margin-bottom: 0; }
+            .sidebar-header-row { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+            .sidebar-header-row .vcard-names { margin-bottom: 0; }
+            .repo-grid { grid-template-columns: 1fr; }
+            .no-results { grid-column: span 1; }
+            .modal-footer { flex-direction: column; }
+            .modal-footer button, .modal-footer a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-logo">
+        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+    </div>
+    <div class="header-right">Data &amp; Visual Analytics Portfolio &nbsp;·&nbsp; <span>Neeraj Singh</span></div>
+</header>
+
+<!-- MAIN LAYOUT -->
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="avatar-wrap">
+            <img src="https://avatars.githubusercontent.com/u/188966305?v=4" alt="Neeraj Singh" class="avatar">
+            <div class="avatar-status" title="Available for opportunities"></div>
+        </div>
+
+        <div class="vcard-names">
+            <h1 class="vcard-fullname">Neeraj Singh</h1>
+            <h2 class="vcard-username">Neeraj-singh140805</h2>
+        </div>
+
+        <p class="vcard-bio">
+            Data &amp; Visual Analytics enthusiast. Turning raw numbers into clear insights through Excel, SQL, Python &amp; Tableau. Open to data analyst opportunities.
+        </p>
+
+        <a href="https://github.com/Neeraj-singh140805" target="_blank" class="btn-profile">
+            View GitHub Profile
+        </a>
+
+        <ul class="vcard-details">
+            <li>
+                <!-- Location icon -->
+                <svg viewBox="0 0 16 16"><path d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                Sonipat, Haryana, India
+            </li>
+            <li>
+                <!-- Org icon -->
+                <svg viewBox="0 0 16 16"><path d="M1.5 14.25c0 .138.112.25.25.25H4v-1.25a.75.75 0 01.75-.75h2.5a.75.75 0 01.75.75v1.25h2.25a.25.25 0 00.25-.25V1.75a.25.25 0 00-.25-.25h-8.5a.25.25 0 00-.25.25v12.5zM1.75 0h8.5c.966 0 1.75.784 1.75 1.75v12.5A1.75 1.75 0 0110.25 16h-8.5A1.75 1.75 0 010 14.25V1.75C0 .784.784 0 1.75 0zM3.5 3.75a.75.75 0 01.75-.75h.5a.75.75 0 010 1.5h-.5a.75.75 0 01-.75-.75zm.75 2.25h.5a.75.75 0 010 1.5h-.5a.75.75 0 010-1.5zM3.5 9.75a.75.75 0 01.75-.75h.5a.75.75 0 010 1.5h-.5a.75.75 0 01-.75-.75zm4-6a.75.75 0 01.75-.75h.5a.75.75 0 010 1.5h-.5a.75.75 0 01-.75-.75zm.75 2.25h.5a.75.75 0 010 1.5h-.5a.75.75 0 010-1.5zM7.5 9.75a.75.75 0 01.75-.75h.5a.75.75 0 010 1.5h-.5a.75.75 0 01-.75-.75z"/></svg>
+                DVA Portfolio Project
+            </li>
+            <li>
+                <!-- Link icon -->
+                <svg viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg>
+                <a href="https://github.com/Neeraj-singh140805" target="_blank">github.com/Neeraj-singh140805</a>
+            </li>
+            <li>
+                <!-- Portfolio icon -->
+                <svg viewBox="0 0 16 16"><path d="M0 2.75A1.75 1.75 0 011.75 1h12.5C15.216 1 16 1.784 16 2.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V3h13V2.75a.25.25 0 00-.25-.25H1.75zM14.5 4.5h-13v8.75c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V4.5z"/></svg>
+                <a href="https://portfolio-neeraj-singh140805s-projects.vercel.app" target="_blank">Live Portfolio</a>
+            </li>
+        </ul>
+
+        <!-- Stats -->
+        <div class="sidebar-section">
+            <h2>Stats</h2>
+            <div class="stats-row">
+                <div class="stat-item">
+                    <span class="stat-num">19</span>
+                    <span class="stat-lbl">Repositories</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">1</span>
+                    <span class="stat-lbl">Followers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">1</span>
+                    <span class="stat-lbl">Following</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="sidebar-section">
+            <h2>Tools &amp; Skills</h2>
+            <div class="skills-badges">
+                <span class="badge"><span class="badge-dot dot-excel"></span>Excel</span>
+                <span class="badge"><span class="badge-dot dot-tableau"></span>Tableau</span>
+                <span class="badge"><span class="badge-dot dot-sql"></span>SQL</span>
+                <span class="badge"><span class="badge-dot dot-python"></span>Python</span>
+                <span class="badge"><span class="badge-dot dot-python"></span>Pandas</span>
+                <span class="badge"><span class="badge-dot dot-misc"></span>Power Query</span>
+                <span class="badge"><span class="badge-dot dot-misc"></span>NumPy</span>
+                <span class="badge"><span class="badge-dot dot-misc"></span>Matplotlib</span>
+            </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="sidebar-section">
+            <h2>Achievements</h2>
+            <div class="skills-badges">
+                <span class="badge">🦈 Pull Shark</span>
+                <span class="badge">⚡ Quickdraw</span>
+                <span class="badge">🎯 YOLO</span>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+        <nav class="UnderlineNav">
+            <div class="UnderlineNav-item">
+                <svg viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+                DVA Projects
+                <span class="repo-count" id="repo-count-badge">8</span>
+            </div>
+        </nav>
+
+        <!-- FILTER BAR -->
+        <div class="repo-filter-bar">
+            <input type="text" id="repo-search" class="local-search" placeholder="Find a project...">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="excel">
+                    <span class="fdot" style="background:var(--gh-green)"></span>Excel
+                </button>
+                <button class="filter-btn" data-filter="tableau">
+                    <span class="fdot" style="background:var(--gh-orange)"></span>Tableau
+                </button>
+                <button class="filter-btn" data-filter="sql">
+                    <span class="fdot" style="background:var(--gh-sql)"></span>SQL
+                </button>
+                <button class="filter-btn" data-filter="python">
+                    <span class="fdot" style="background:var(--gh-yellow)"></span>Python
+                </button>
+            </div>
+        </div>
+
+        <!-- REPO GRID -->
+        <div class="repo-grid" id="repo-grid">
+
+            <!-- 1. EXCEL — Sales Performance Dashboard -->
+            <div class="repo-card open-modal-btn"
+                 data-category="excel"
+                 data-title="Sales-Performance-Dashboard"
+                 data-cover-class="cover-excel"
+                 data-emoji="📊"
+                 data-link="https://github.com/Neeraj-singh140805"
+                 data-tags="excel,pivot-tables,power-query,kpi"
+                 data-desc="Built an end-to-end sales performance dashboard in Excel using Pivot Tables and Power Query. Automated monthly data refresh for 10,000+ rows, reducing reporting time by 12 hours. Dynamic slicers allow region-wise and product-wise KPI drill-down.">
+                <div class="card-cover-svg cover-excel">📊</div>
+                <div class="repo-card-body">
+                    <div class="repo-header">
+                        <div class="repo-title-group">
+                            <svg viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+                            <a class="repo-title">Sales-Performance-Dashboard</a>
+                        </div>
+                        <span class="repo-badge">Public</span>
+                    </div>
+                    <p class="repo-desc">Automated KPI tracking with Power Query, Pivot Tables &amp; dynamic slicers for region-wise drill-down.</p>
+                    <div class="repo-tags">
+                        <span class="topic-tag">pivot-tables</span>
+                        <span class="topic-tag">power-query</span>
+                        <span class="topic-tag">kpi</span>
+                    </div>
+                    <div class="repo-footer">
+                        <span><span class="lang-color lang-excel"></span> Excel</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. TABLEAU — E-Commerce Insights -->
+            <div class="repo-card open-modal-btn"
+                 data-category="tableau"
+                 data-title="E-Commerce-Insights-Dashboard"
+                 data-cover-class="cover-tableau"
+                 data-emoji="🛒"
+                 data-link="https://github.com/Neeraj-singh140805"
+                 data-tags="tableau,lod,calculated-fields,interactive"
+                 data-desc="Interactive Tableau dashboard visualizing e-commerce sales trends, customer segmentation and revenue by category. Used LOD expressions to compute cohort retention rates. Designed for executives with parameter-driven filtering by date range and region.">
+                <div class="card-cover-svg cover-tableau">🛒</div>
+                <div class="repo-card-body">
+                    <div class="repo-header">
+                        <div class="repo-title-group">
+                            <svg viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+                            <a class="repo-title">E-Commerce-Insights-Dashboard</a>
+                        </div>
+                        <span class="repo-badge">Public</span>
+                    </div>
+                    <p class="repo-desc">LOD-based customer cohort analysis with parameter-driven filtering across date range and region.</p>
+                    <div class="repo-tags">
+                        <span class="topic-tag">lod-expressions</span>
+                        <span class="topic-tag">cohort-analysis</span>
+                    </div>
+                    <div class="repo-footer">
+                        <span><span class="lang-color lang-tableau"></span> Tableau</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. SQL — Retail Database Analysis -->
+            <div class="repo-card open-modal-btn"
+                 data-category="sql"
+                 data-title="Retail-SQL-Analysis"
+                 data-cover-class="cover-sql"
+                 data-emoji="🗄️"
+                 data-link="https://github.com/Neeraj-singh140805"
+                 data-tags="sql,window-functions,cte,joins"
+                 data-desc="Deep-dive SQL analysis on a 500K-row retail transactions database. Leveraged CTEs, window functions (RANK, LAG, LEAD) and subqueries to identify top customers, seasonal demand patterns and inventory bottlenecks. Results exported to CSV for further visualization.">
+                <div class="card-cover-svg cover-sql">🗄️</div>
+                <div class="repo-card-body">
+                    <div class="repo-header">
+                        <div class="repo-title-group">
+                            <svg viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+                            <a class="repo-title">Retail-SQL-Analysis</a>
+                        </div>
+                        <span class="repo-badge">Public</span>
+                    </div>
+                    <p class="repo-desc">Window functions, CTEs &amp; subqueries on 500K retail rows to uncover seasonal demand and top customers.</p>
+                    <div class="repo-tags">
+                        <span class="topic-tag">window-functions</span>
+                        <span class="topic-tag">cte</span>
+                        <span class="topic-tag">eda</span>
+                    </div>
+                    <div class="repo-footer">
+                        <span><span class="lang-color lang-sql"></span> SQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. PYTHON — EDA on Fitness Data -->
+            <div class="repo-card open-modal-btn"
+                 data-category="python"
+                 data-title="Wellora-Fitness-EDA"
+                 data-cover-class="cover-python"
+                 data-emoji="🏋️"
+                 data-link="https://github.com/Neeraj-singh140805/Wellora"
+                 data-tags="python,pandas,matplotlib,seaborn,eda"
+                 data-desc="Exploratory Data Analysis on Wellora fitness dashboard data using Python. Cleaned and transformed workout log data with Pandas, built correlation heatmaps with Seaborn, and visualized weekly activity trends with Matplotlib. Identified peak workout hours and calorie burn patterns across user cohorts.">
+                <div class="card-cover-svg cover-python">🏋️</div>
+                <div class="repo-card-body">
+                    <div class="repo-header">
+                        <div class="repo-title-group">
+                            <svg viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+                            <a class="repo-title">Wellora-Fitness-EDA</a>
+                        </div>
+                        <span class="repo-badge">Public</span>
+                    </div>
+                    <p class="repo-desc">Pandas + Seaborn EDA on Wellora fitness data — calorie burn heatmaps &amp; peak activity trend analysis.</p>
+                    <div class="repo-tags">
+                        <span class="topic-tag">pandas</span>
+                        <span class="topic-tag">seaborn</span>
+                        <span class="topic-tag">eda</span>
+                    </div>
+                    <div class="repo-footer">
+                        <span><span class="lang-color lang-python"></span> Python</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. EXCEL — HR Attrition Tracker -->
+            <div class="repo-card open-modal-btn"
+                 data-category="excel"
+                 data-title="HR-Attrition-Tracker"
+                 data-cover-class="cover-excel"
+                 data-emoji="👥"
+                 data-link="https://github.com/Neeraj-singh140805"
+                 data-tags="excel,vba,conditional-formatting,hr-analytics"
+                 data-desc="Excel workbook tracking HR attrition across departments using conditional formatting, VBA macros for automated monthly summaries, and dynamic charts showing attrition trends over 24 months. Integrated IF/VLOOKUP logic to flag high-risk employees.">
+                <div class="card-cover-svg cover-excel">👥</div>
+                <div class="repo-card-body">
+                    <div class="repo-header">
+                        <div class="repo-title-group">
+                            <svg viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+                            <a class="repo-title">HR-Attrition-Tracker</a>
+                        </div>
+                        <span class="repo-badge">Public</span>
+                    </div>
+                    <p class="repo-desc">VBA-automated HR workbook with conditional formatting and 24-month attrition trend charts.</p>
+                    <div class="repo-tags">
+                        <span class="topic-tag">vba</span>
+                        <span class="topic-tag">hr-analytics</span>
+                        <span class="topic-tag">automation</span>
+                    </div>
+                    <div class="repo-footer">
+                        <span><span class="lang-color lang-excel"></span> Excel</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. SQL — Music Store Analysis -->
+            <div class="repo-card open-modal-btn"
+                 data-category="sql"
+                 data-title="Music-Store-SQL-Analysis"
+                 data-cover-class="cover-sql"
+                 data-emoji="🎵"
+                 data-link="https://github.com/Neeraj-singh140805/Harmonix"
+                 data-tags="sql,postgresql,joins,aggregation"
+                 data-desc="Comprehensive SQL analysis on a music store database (inspired by the Harmonix project). Used multi-table JOINs, GROUP BY aggregations and HAVING clauses to identify top-selling genres, best customer cities, and artist revenue rankings. Covers 11+ analytical queries.">
+                <div class="card-cover-svg cover-sql">🎵</div>
+                <div class="repo-card-body">
+                    <div class="repo-header">
+                        <div class="repo-title-group">
+                            <svg viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+                            <a class="repo-title">Music-Store-SQL-Analysis</a>
+                        </div>
+                        <span class="repo-badge">Public</span>
+                    </div>
+                    <p class="repo-desc">11+ analytical SQL queries on music store DB — genre rankings, top cities &amp; artist revenue via JOINs.</p>
+                    <div class="repo-tags">
+                        <span class="topic-tag">postgresql</span>
+                        <span class="topic-tag">aggregation</span>
+                        <span class="topic-tag">joins</span>
+                    </div>
+                    <div class="repo-footer">
+                        <span><span class="lang-color lang-sql"></span> SQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. TABLEAU — Craft Sales Geographic Map -->
+            <div class="repo-card open-modal-btn"
+                 data-category="tableau"
+                 data-title="Craft-Sales-Geo-Map"
+                 data-cover-class="cover-tableau"
+                 data-emoji="🗺️"
+                 data-link="https://github.com/Neeraj-singh140805/Craftless-time-designs"
+                 data-tags="tableau,geospatial,maps,dual-axis"
+                 data-desc="Geospatial Tableau visualisation mapping craft product sales across Indian states (inspired by Craftless-time-designs). Uses dual-axis maps with custom shapes, filled maps for revenue density, and symbol maps for order volume. Parameter-controlled year-over-year comparison view.">
+                <div class="card-cover-svg cover-tableau">🗺️</div>
+                <div class="repo-card-body">
+                    <div class="repo-header">
+                        <div class="repo-title-group">
+                            <svg viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+                            <a class="repo-title">Craft-Sales-Geo-Map</a>
+                        </div>
+                        <span class="repo-badge">Public</span>
+                    </div>
+                    <p class="repo-desc">Dual-axis geospatial Tableau map — revenue density &amp; order volume across Indian states with YoY view.</p>
+                    <div class="repo-tags">
+                        <span class="topic-tag">geospatial</span>
+                        <span class="topic-tag">dual-axis</span>
+                        <span class="topic-tag">maps</span>
+                    </div>
+                    <div class="repo-footer">
+                        <span><span class="lang-color lang-tableau"></span> Tableau</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. PYTHON — Web Scraping & Data Pipeline -->
+            <div class="repo-card open-modal-btn"
+                 data-category="python"
+                 data-title="Product-Price-Scraper"
+                 data-cover-class="cover-python"
+                 data-emoji="🕷️"
+                 data-link="https://github.com/Neeraj-singh140805"
+                 data-tags="python,beautifulsoup,pandas,data-cleaning"
+                 data-desc="Python web scraper using BeautifulSoup and Requests to collect product pricing data from e-commerce listings. Cleans and deduplicates the dataset with Pandas, handles missing values and outliers, then exports a clean CSV ready for Tableau or Excel dashboarding.">
+                <div class="card-cover-svg cover-python">🕷️</div>
+                <div class="repo-card-body">
+                    <div class="repo-header">
+                        <div class="repo-title-group">
+                            <svg viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+                            <a class="repo-title">Product-Price-Scraper</a>
+                        </div>
+                        <span class="repo-badge">Public</span>
+                    </div>
+                    <p class="repo-desc">BeautifulSoup + Pandas pipeline — scrapes e-commerce prices, cleans data, exports dashboard-ready CSV.</p>
+                    <div class="repo-tags">
+                        <span class="topic-tag">web-scraping</span>
+                        <span class="topic-tag">pandas</span>
+                        <span class="topic-tag">data-cleaning</span>
+                    </div>
+                    <div class="repo-footer">
+                        <span><span class="lang-color lang-python"></span> Python</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="no-results" id="no-results-msg">No projects match your search or filter.</div>
+        </div>
+
+        <!-- CONTRIBUTION GRAPH -->
+        <div class="contrib-graph">
+            <div class="contrib-title" id="contrib-title">Contributions in the last year</div>
+            <div class="graph-squares" id="graph-squares"></div>
+            <div class="graph-legend">
+                Less
+                <div class="g-sq"></div>
+                <div class="g-sq g-l1"></div>
+                <div class="g-sq g-l2"></div>
+                <div class="g-sq g-l3"></div>
+                <div class="g-sq g-l4"></div>
+                More
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <p>&copy; <span id="current-year"></span> Neeraj Singh · DVA Portfolio</p>
+    <div style="margin-top:8px">
+        <a href="https://github.com/Neeraj-singh140805" target="_blank">GitHub</a>
+        <a href="https://portfolio-neeraj-singh140805s-projects.vercel.app" target="_blank">Portfolio</a>
+    </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px">
+                <div class="modal-title" id="m-title">Project Title</div>
+                <span class="modal-category" id="m-cat"></span>
+            </div>
+            <button class="close-btn" id="close-modal">
+                <svg viewBox="0 0 16 16"><path d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"/></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-cover" id="m-cover"></div>
+            <p class="modal-desc" id="m-desc"></p>
+            <div class="modal-tags" id="m-tags"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" id="cancel-modal">Close</button>
+            <a href="#" target="_blank" class="btn-primary" id="m-link">View on GitHub →</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Footer year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // ── Contribution graph ──
+    (function(){
+        const el = document.getElementById('graph-squares');
+        const levels = ['','g-l1','','','g-l2','','g-l3','','','g-l4',''];
+        let count = 0;
+        for(let i=0;i<210;i++){
+            const d = document.createElement('div');
+            const lvl = levels[Math.floor(Math.random()*levels.length)];
+            d.className = 'g-sq' + (lvl ? ' '+lvl : '');
+            if(lvl) count += (lvl==='g-l4'?4:lvl==='g-l3'?3:lvl==='g-l2'?2:1);
+            el.appendChild(d);
+        }
+        document.getElementById('contrib-title').textContent = count + ' contributions in the last year';
+    })();
+
+    // ── Search & Filter ──
+    const searchInput     = document.getElementById('repo-search');
+    const filterBtns      = document.querySelectorAll('.filter-btn');
+    const repoCards       = document.querySelectorAll('.repo-card');
+    const repoCountBadge  = document.getElementById('repo-count-badge');
+    const noResultsMsg    = document.getElementById('no-results-msg');
+
+    let currentSearch = '';
+    let currentFilter = 'all';
+
+    function applyFilter(){
+        let visible = 0;
+        repoCards.forEach(card => {
+            const title    = card.dataset.title.toLowerCase();
+            const desc     = card.dataset.desc.toLowerCase();
+            const tags     = (card.dataset.tags||'').toLowerCase();
+            const cat      = card.dataset.category;
+            const matchS   = title.includes(currentSearch)||desc.includes(currentSearch)||tags.includes(currentSearch);
+            const matchF   = currentFilter==='all'||cat===currentFilter;
+            const show     = matchS && matchF;
+            card.style.display = show ? 'flex' : 'none';
+            if(show) visible++;
+        });
+        repoCountBadge.textContent = visible;
+        noResultsMsg.style.display = visible===0 ? 'block' : 'none';
+    }
+
+    searchInput.addEventListener('input', e => { currentSearch = e.target.value.toLowerCase(); applyFilter(); });
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.dataset.filter;
+            applyFilter();
+        });
+    });
+    applyFilter();
+
+    // ── Modal ──
+    const modal        = document.getElementById('modal');
+    const mTitle       = document.getElementById('m-title');
+    const mDesc        = document.getElementById('m-desc');
+    const mCover       = document.getElementById('m-cover');
+    const mCat         = document.getElementById('m-cat');
+    const mTags        = document.getElementById('m-tags');
+    const mLink        = document.getElementById('m-link');
+
+    const catColors = { excel:'#2ea043', tableau:'#f78166', sql:'#e34c26', python:'#e3b341' };
+
+    repoCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const cat = card.dataset.category;
+            mTitle.textContent = card.dataset.title.replace(/-/g,' ');
+            mDesc.textContent  = card.dataset.desc;
+            mLink.href         = card.dataset.link;
+            mCat.textContent   = cat.toUpperCase();
+            mCat.style.borderColor = catColors[cat]||'var(--gh-border)';
+            mCat.style.color       = catColors[cat]||'var(--gh-text-muted)';
+
+            // Cover
+            const coverClass = card.dataset.coverClass;
+            const emoji      = card.dataset.emoji;
+            mCover.className = 'modal-cover ' + coverClass;
+            mCover.textContent = emoji;
+
+            // Tags
+            mTags.innerHTML = '';
+            (card.dataset.tags||'').split(',').forEach(t => {
+                const span = document.createElement('span');
+                span.className = 'topic-tag';
+                span.textContent = t.trim();
+                mTags.appendChild(span);
+            });
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    const closeModal = () => { modal.classList.remove('active'); document.body.style.overflow='auto'; };
+    document.getElementById('close-modal').addEventListener('click', closeModal);
+    document.getElementById('cancel-modal').addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if(e.target===modal) closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+</script>
+</body>
+</html>
