@@ -1,134 +1,78 @@
-# 🚀 Neeraj Singh 
+# <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueGZ3eHdwZzR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/qgQUggAC3Pfv687qPC/giphy.gif" width="35"> Hi, I'm Neeraj Singh
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Arial&size=22&duration=2500&pause=1000&color=0A66C2&center=true&vCenter=true&width=600&lines=Data+Analyst;Data+Cleaning+%7C+EDA+%7C+Visualization;Turning+Data+into+Actionable+Insights" />
-</p>
-
-<p align="center">
-  <a href="https://github.com/Neeraj-singh140805">
-    <img src="https://img.shields.io/github/followers/Neeraj-singh140805?label=Followers&style=social" />
-  </a>
-  <img src="https://img.shields.io/badge/Data-Analytics-blue" />
-  <img src="https://img.shields.io/badge/Focus-EDA%20%7C%20Visualization-green" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=36BCF7&center=true&vCenter=true&width=700&lines=Solving+Complex+Problems+with+Data;Python+%7C+SQL+%7C+Tableau+%7C+Machine+Learning;Turning+Numbers+into+Narratives" />
 </p>
 
 ---
 
-## 👨‍💻 About Me  
+## 🚀 The Data Journey
+I’m a **Data Analyst** currently pursuing my B.Tech in CS & AI. I don't just "clean data"—I hunt for stories hidden in rows and columns. Whether it's mapping the cosmos with NASA data or optimizing the last mile for Zomato, I build dashboards that drive decisions.
 
-💡 Data Analyst passionate about transforming **raw data into actionable insights**  
-
-- 📊 Strong in **Data Cleaning, EDA & Dashboarding**
-- 🛠️ Tools: **Python, SQL, Tableau, Looker Studio**
-- 📈 Real-world analysis: **NASA + Zomato datasets**
-- 🎯 Focus: **Data storytelling & business insights**
+- 🔭 **Currently exploring:** Advanced Predictive Modeling & AI Integration.
+- ⚡ **Fun Fact:** I believe a good visualization is worth a thousand SQL queries.
+- 🎯 **Goal:** Bridging the gap between technical complexity and business clarity.
 
 ---
 
-## 🧰 Tech Stack  
+## 🛠️ My Arsenal
 
+### 💻 Analysis & Programming
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![SQL](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+
+### 📊 Visualization & BI
+![Tableau](https://img.shields.io/badge/Tableau-E97628?style=for-the-badge&logo=Tableau&logoColor=white)
+![Looker](https://img.shields.io/badge/Looker%20Studio-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+![Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
+
+---
+
+## 🏮 Featured Projects
+
+### 🌌 Exoplanet Discovery Analysis
+> **Goal:** Deconstruct how humanity finds worlds beyond our solar system.
+
+| Key Feature | Detail |
+| :--- | :--- |
+| **Dataset** | 5,000+ NASA Verified Records |
+| **Tech** | Python (Data Mining), Looker Studio (Viz) |
+| **Outcome** | Identified the "Kepler Effect" on Transit Method dominance. |
+
+### 🍔 Zomato Delivery Analytics
+> **Goal:** Identify bottlenecks in hyper-local food delivery logistics.
+
+*   **Insight 1:** Traffic isn't the biggest killer; **multi-order batching** increases wait times by **80%**.
+*   **Insight 2:** Peak efficiency occurs between 4 PM - 7 PM in Metro hubs.
+*   **Visuals:** Heatmaps showing delivery density vs. delay hotspots.
+
+---
+
+## 🎓 Education
+- **B.Tech (Computer Science & AI)** 
+- 📍 *Newton School of Technology, Rishihood University*
+- 📅 *2024 – 2028*
+
+---
+
+## 📊 Performance Metrics
 <p align="center">
-
-<img src="https://skillicons.dev/icons?i=python,js" />
-<br/>
-
-<img src="https://img.shields.io/badge/SQL-Structured%20Query%20Language-blue" />
-<img src="https://img.shields.io/badge/Pandas-Data%20Analysis-orange" />
-<img src="https://img.shields.io/badge/NumPy-Numerical%20Computing-yellow" />
-<img src="https://img.shields.io/badge/Tableau-Visualization-blue" />
-<img src="https://img.shields.io/badge/Looker%20Studio-Dashboard-green" />
-<img src="https://img.shields.io/badge/Excel-Data%20Handling-lightgreen" />
-
+  <img src="https://github-readme-stats.vercel.app/api?username=Neeraj-singh140805&show_icons=true&theme=radical&rank_icon=github&border_radius=10" height="180"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Neeraj-singh140805&theme=radical&border_radius=10" height="180"/>
 </p>
 
 ---
 
-## 🎓 Education  
-
-**B.Tech (Computer Science & AI)**  
-📍 Newton School of Technology, Rishihood University  
-📅 2024 – 2028  
-
----
-
-# 📊 Featured Projects  
-
----
-
-## 🌌 Exoplanet Discovery Dashboard  
-
-<p align="center">
-  <img src="https://via.placeholder.com/800x400.png?text=Exoplanet+Dashboard+Preview" />
+## 🤝 Connect & Collaborate
+<p align="left">
+<a href="mailto:your-email@example.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+<a href="https://linkedin.com/in/your-profile"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+<a href="https://github.com/Neeraj-singh140805"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
 </p>
 
-🔗 **Links**  
-- 📊 Live Dashboard: [View Here](#)  
-- 💻 GitHub Code: [Repository](#)  
-
-### 🔍 Overview  
-Analyzed NASA exoplanet dataset to uncover **discovery trends, efficiency, and observational bias**  
-
-### 📈 Key Insights  
-- 🚀 Transit method dominates (**70%+ after 2009**)  
-- 🌍 Bias toward **hot Jupiters**  
-- 📊 Supports **future mission planning decisions**  
-
-### 🧠 What I Learned  
-- Handling **large real-world datasets (5K+ records)**  
-- Building **interactive dashboards for storytelling**  
-- Identifying **hidden biases in scientific data**
-
----
-
-## 🍔 Zomato Delivery Analytics Dashboard  
-
 <p align="center">
-  <img src="https://via.placeholder.com/800x400.png?text=Zomato+Dashboard+Preview" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" width="100%"/>
 </p>
-
-🔗 **Links**  
-- 📊 Live Dashboard: [View Here](#)  
-- 💻 GitHub Code: [Repository](#)  
-
-### 🔍 Overview  
-Analyzed delivery operations data to identify **performance bottlenecks & trends**  
-
-### 📈 Key Insights  
-- 📍 **77%+ demand in metro cities**  
-- ⏱️ Avg delivery time: **~26 mins**  
-- 🚦 Traffic delays → **~31 mins**  
-- 📦 Multi-orders → **~47 mins**  
-
-### 🧠 What I Learned  
-- KPI tracking & **business metrics analysis**  
-- Impact of **external factors (traffic, weather)**  
-- Dashboard design for **decision-makers**
-
----
-
-## 📈 GitHub Analytics  
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Neeraj-singh140805&show_icons=true&theme=tokyonight" height="150"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Neeraj-singh140805&theme=tokyonight" height="150"/>
-</p>
-
----
-
-## 📊 Contribution Activity  
-
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Neeraj-singh140805&theme=tokyonight" />
-</p>
-
----
-
-## 📬 Contact  
-
-📧 Email: your-email@example.com  
-💼 LinkedIn: https://linkedin.com/in/your-profile  
-🐙 GitHub: https://github.com/Neeraj-singh140805  
-
----
-
-# ⭐ If you like this portfolio, consider giving a star!
