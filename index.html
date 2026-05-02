@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neeraj Singh — Data Analyst Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ── Modern Premium Aesthetics ── */
@@ -16,9 +18,12 @@
             --card-border: rgba(255, 255, 255, 0.1);
             --text-main: #f9fafb;
             --text-muted: #9ca3af;
-            --accent-1: #8b5cf6; /* Violet */
-            --accent-2: #3b82f6; /* Blue */
-            --accent-3: #10b981; /* Emerald */
+            --accent-1: #8b5cf6;
+            /* Violet */
+            --accent-2: #3b82f6;
+            /* Blue */
+            --accent-3: #10b981;
+            /* Emerald */
             --glass: rgba(17, 24, 39, 0.6);
         }
 
@@ -48,10 +53,22 @@
         }
 
         /* ── CUSTOM SCROLLBAR ── */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-color); }
-        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.4); }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
 
         /* ── HEADER ── */
         header {
@@ -91,15 +108,15 @@
             gap: 8px;
             padding: 8px 16px;
             border-radius: 20px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: 0.3s ease;
         }
 
         .header-right a:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         /* ── LAYOUT ── */
@@ -118,14 +135,14 @@
             top: 120px;
             height: fit-content;
         }
-        
+
         .glass-card {
             background: var(--card-bg);
             backdrop-filter: blur(12px);
             border: 1px solid var(--card-border);
             border-radius: 24px;
             padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -134,7 +151,10 @@
         .glass-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; height: 4px;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
             background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
             opacity: 0;
             transition: opacity 0.4s ease;
@@ -142,13 +162,17 @@
 
         .glass-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            border-color: rgba(255,255,255,0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
-        .glass-card:hover::before { opacity: 1; }
+        .glass-card:hover::before {
+            opacity: 1;
+        }
 
-        .profile-card { text-align: center; }
+        .profile-card {
+            text-align: center;
+        }
 
         .avatar-container {
             position: relative;
@@ -162,8 +186,13 @@
         }
 
         @keyframes pulse-border {
-            0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
-            100% { box-shadow: 0 0 0 15px rgba(139, 92, 246, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+            }
+
+            100% {
+                box-shadow: 0 0 0 15px rgba(139, 92, 246, 0);
+            }
         }
 
         .avatar {
@@ -175,7 +204,9 @@
             transition: transform 0.5s ease;
         }
 
-        .avatar-container:hover .avatar { transform: scale(1.05) rotate(5deg); }
+        .avatar-container:hover .avatar {
+            transform: scale(1.05) rotate(5deg);
+        }
 
         .status-badge {
             display: inline-flex;
@@ -199,9 +230,26 @@
             box-shadow: 0 0 8px var(--accent-3);
         }
 
-        .name { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 0.2rem; }
-        .username { color: var(--accent-2); font-weight: 500; margin-bottom: 1.5rem; font-size: 1rem;}
-        .bio { font-size: 1rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; }
+        .name {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.2rem;
+        }
+
+        .username {
+            color: var(--accent-2);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .bio {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
 
         .social-links {
             display: flex;
@@ -215,8 +263,8 @@
             justify-content: center;
             width: 45px;
             height: 45px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: var(--text-main);
             font-size: 1.2rem;
@@ -232,7 +280,10 @@
         }
 
         /* Skills Section */
-        .skills-section { margin-top: 2rem; }
+        .skills-section {
+            margin-top: 2rem;
+        }
+
         .section-subtitle {
             font-size: 1.1rem;
             font-weight: 700;
@@ -243,7 +294,10 @@
             gap: 8px;
         }
 
-        .skill-item { margin-bottom: 1.2rem; }
+        .skill-item {
+            margin-bottom: 1.2rem;
+        }
+
         .skill-info {
             display: flex;
             justify-content: space-between;
@@ -252,13 +306,13 @@
             margin-bottom: 8px;
             color: var(--text-muted);
         }
-        
+
         .progress-bar {
             height: 8px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .progress-fill {
@@ -273,19 +327,29 @@
         .progress-fill::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
             animation: shimmer 2s infinite linear;
             transform: skewX(-20deg);
         }
 
         @keyframes shimmer {
-            0% { transform: translateX(-100%) skewX(-20deg); }
-            100% { transform: translateX(200%) skewX(-20deg); }
+            0% {
+                transform: translateX(-100%) skewX(-20deg);
+            }
+
+            100% {
+                transform: translateX(200%) skewX(-20deg);
+            }
         }
 
         /* ── MAIN CONTENT ── */
-        .main-content { min-width: 0; }
+        .main-content {
+            min-width: 0;
+        }
 
         .section-title {
             font-size: 2.5rem;
@@ -332,8 +396,8 @@
         }
 
         .search-box {
-            background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             color: #fff;
             padding: 0.8rem 1rem 0.8rem 2.5rem;
             border-radius: 12px;
@@ -348,10 +412,15 @@
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
         }
 
-        .filter-group { display: flex; gap: 10px; flex-wrap: wrap; }
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
         .filter-btn {
             background: transparent;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--text-main);
             padding: 0.6rem 1.2rem;
             border-radius: 12px;
@@ -361,12 +430,15 @@
             transition: all 0.3s ease;
         }
 
-        .filter-btn:hover { background: rgba(255,255,255,0.05); }
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
         .filter-btn.active {
             background: var(--text-main);
             color: var(--bg-color);
             border-color: var(--text-main);
-            box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
         }
 
         /* Project Grid */
@@ -392,8 +464,8 @@
 
         .project-card:hover {
             transform: translateY(-10px);
-            border-color: rgba(255,255,255,0.2);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
         .card-banner {
@@ -409,15 +481,26 @@
         .card-banner::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: inherit;
             filter: blur(20px) brightness(0.7);
             transform: scale(1.2);
             z-index: 0;
         }
-        
-        .card-banner span { position: relative; z-index: 1; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3)); transition: transform 0.5s ease; }
-        .project-card:hover .card-banner span { transform: scale(1.2); }
+
+        .card-banner span {
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .card-banner span {
+            transform: scale(1.2);
+        }
 
         .card-content {
             padding: 1.8rem;
@@ -426,9 +509,9 @@
             flex-direction: column;
         }
 
-        .project-name { 
-            color: #fff; 
-            font-weight: 700; 
+        .project-name {
+            color: #fff;
+            font-weight: 700;
             font-size: 1.4rem;
             margin-bottom: 0.8rem;
             text-decoration: none;
@@ -450,29 +533,35 @@
             transform: translateX(0);
         }
 
-        .project-desc { 
-            font-size: 1rem; 
-            color: var(--text-muted); 
-            margin-bottom: 1.5rem; 
+        .project-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
             flex-grow: 1;
             line-height: 1.6;
         }
 
-        .tag-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+        }
+
         .tag {
             font-size: 0.75rem;
             font-weight: 600;
             padding: 4px 12px;
             border-radius: 20px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             color: var(--text-main);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
 
         .project-card:hover .tag {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         /* ── ANIMATIONS ── */
@@ -483,323 +572,382 @@
         }
 
         @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Staggered delays */
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
 
         /* Mobile Adjustments */
         @media (max-width: 950px) {
-            .container { grid-template-columns: 1fr; padding-top: 1rem; margin-top: 80px; }
-            .sidebar { position: static; }
-            .section-title { font-size: 2rem; }
-            .controls { flex-direction: column; align-items: stretch; }
-            .search-container { max-width: 100%; }
-            .filter-group { justify-content: center; }
+            .container {
+                grid-template-columns: 1fr;
+                padding-top: 1rem;
+                margin-top: 80px;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-container {
+                max-width: 100%;
+            }
+
+            .filter-group {
+                justify-content: center;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<!-- Data Network Background -->
-<canvas id="data-bg"></canvas>
+    <!-- Data Network Background -->
+    <canvas id="data-bg"></canvas>
 
-<header>
-    <div class="logo">
-        <i class="fa-solid fa-chart-pie" style="color: var(--accent-2);"></i>
-        NEERAJ.ANALYTICS
-    </div>
-    <div class="header-right">
-        <a href="mailto:your-email@example.com">
-            <i class="fa-regular fa-paper-plane"></i> Let's Talk
-        </a>
-    </div>
-</header>
-
-<div class="container">
-    <!-- SIDEBAR -->
-    <aside class="sidebar animate-up delay-1">
-        <div class="glass-card profile-card">
-            <div class="status-badge">
-                <div class="status-dot"></div> Available for work
-            </div>
-            <div class="avatar-container">
-                <img src="MY.jpeg" alt="Neeraj" class="avatar">
-            </div>
-            <h1 class="name">Neeraj Singh</h1>
-            <p class="username"><i class="fa-brands fa-github"></i> @Neeraj-singh140805</p>
-            <p class="bio">Full-Stack Developer & Data Analyst. Crafting aesthetic dashboards and intelligent backend solutions.</p>
-            
-            <div class="social-links">
-                <a href="https://github.com/Neeraj-singh140805" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/neeraj-singh-496205315/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            </div>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-chart-pie" style="color: var(--accent-2);"></i>
+            NEERAJ.ANALYTICS
         </div>
-
-        <div class="glass-card skills-section animate-up delay-2" style="margin-top: 1.5rem;">
-            <h3 class="section-subtitle"><i class="fa-solid fa-bolt" style="color: #fbbf24;"></i> Technical Arsenal</h3>
-            
-            <div class="skill-item">
-                <div class="skill-info"><span>Python & SQL</span><span>90%</span></div>
-                <div class="progress-bar">
-                    <div class="progress-fill" data-width="90%" style="background: linear-gradient(90deg, #3b82f6, #8b5cf6);"></div>
-                </div>
-            </div>
-            
-            <div class="skill-item">
-                <div class="skill-info"><span>Tableau/Looker</span><span>85%</span></div>
-                <div class="progress-bar">
-                    <div class="progress-fill" data-width="85%" style="background: linear-gradient(90deg, #10b981, #3b82f6);"></div>
-                </div>
-            </div>
-            
-            <div class="skill-item">
-                <div class="skill-info"><span>Data Cleaning</span><span>95%</span></div>
-                <div class="progress-bar">
-                    <div class="progress-fill" data-width="95%" style="background: linear-gradient(90deg, #f59e0b, #ef4444);"></div>
-                </div>
-            </div>
+        <div class="header-right">
+            <a href="mailto:your-email@example.com">
+                <i class="fa-regular fa-paper-plane"></i> Let's Talk
+            </a>
         </div>
-    </aside>
+    </header>
 
-    <!-- MAIN -->
-    <main class="main-content">
-        
-        <!-- ABOUT & EDUCATION -->
-        <div class="about-section animate-up delay-1" style="margin-bottom: 4rem;">
-            <div class="glass-card" style="padding: 2.5rem;">
-                <h2 class="section-title" style="font-size: 2rem; margin-bottom: 1.5rem;">About Me</h2>
-                <p class="section-desc" style="margin-bottom: 2rem; color: #d1d5db; line-height: 1.8;">
-                    I am a passionate <strong>Full-Stack Developer & Data Analyst</strong> dedicated to crafting aesthetic, intuitive dashboards and building intelligent, robust backend solutions. I thrive on turning complex data into actionable insights and creating seamless user experiences. My goal is to bridge the gap between heavy data processing and beautiful UI design.
-                </p>
-                
-                <h3 class="section-subtitle" style="font-size: 1.3rem; margin-bottom: 1rem; color: #fff; display: flex; align-items: center; gap: 10px;">
-                    <i class="fa-solid fa-graduation-cap" style="color: var(--accent-1);"></i> Education
+    <div class="container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar animate-up delay-1">
+            <div class="glass-card profile-card">
+                <div class="status-badge">
+                    <div class="status-dot"></div> Available for work
+                </div>
+                <div class="avatar-container">
+                    <img src="MY.jpeg" alt="Neeraj" class="avatar">
+                </div>
+                <h1 class="name">Neeraj Singh</h1>
+                <p class="username"><i class="fa-brands fa-github"></i> @Neeraj-singh140805</p>
+                <p class="bio">Full-Stack Developer & Data Analyst. Crafting aesthetic dashboards and intelligent
+                    backend solutions.</p>
+
+                <div class="social-links">
+                    <a href="https://github.com/Neeraj-singh140805" target="_blank" title="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/neeraj-singh-496205315/" target="_blank" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="glass-card skills-section animate-up delay-2" style="margin-top: 1.5rem;">
+                <h3 class="section-subtitle"><i class="fa-solid fa-bolt" style="color: #fbbf24;"></i> Technical Arsenal
                 </h3>
-                <div class="education-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 16px; display: flex; gap: 1rem; align-items: flex-start; transition: all 0.3s ease;">
-                    <div style="background: rgba(139, 92, 246, 0.15); padding: 12px; border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.3);">
-                        <i class="fa-solid fa-university" style="color: var(--accent-1); font-size: 1.5rem;"></i>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>Python & SQL</span><span>90%</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="90%"
+                            style="background: linear-gradient(90deg, #3b82f6, #8b5cf6);"></div>
                     </div>
-                    <div>
-                        <h4 style="color: #fff; font-size: 1.15rem; margin-bottom: 0.3rem; font-weight: 600;">B.Tech in Computer Science & Artificial Intelligence</h4>
-                        <p style="color: var(--accent-2); font-weight: 500; font-size: 1rem; margin-bottom: 0.5rem;">Newton School of Technology, Rishihood University</p>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Focused on data analytics, machine learning algorithms, and modern software development practices.</p>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>Tableau/Looker</span><span>85%</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="85%"
+                            style="background: linear-gradient(90deg, #10b981, #3b82f6);"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>Data Cleaning</span><span>95%</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="95%"
+                            style="background: linear-gradient(90deg, #f59e0b, #ef4444);"></div>
                     </div>
                 </div>
             </div>
-        </div>
+        </aside>
 
-        <div class="animate-up delay-2">
-            <h2 class="section-title">Featured Work</h2>
-            <p class="section-desc">A selection of my recent data analysis and full-stack projects.</p>
-        </div>
+        <!-- MAIN -->
+        <main class="main-content">
 
-        <div class="controls animate-up delay-3">
-            <div class="search-container">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="searchInput" class="search-box" placeholder="Search projects, tools...">
+            <!-- ABOUT & EDUCATION -->
+            <div class="about-section animate-up delay-1" style="margin-bottom: 4rem;">
+                <div class="glass-card" style="padding: 2.5rem;">
+                    <h2 class="section-title" style="font-size: 2rem; margin-bottom: 1.5rem;">About Me</h2>
+                    <p class="section-desc" style="margin-bottom: 2rem; color: #d1d5db; line-height: 1.8;">
+                        I am a passionate <strong>Full-Stack Developer & Data Analyst</strong> dedicated to crafting
+                        aesthetic, intuitive dashboards and building intelligent, robust backend solutions. I thrive on
+                        turning complex data into actionable insights and creating seamless user experiences. My goal is
+                        to bridge the gap between heavy data processing and beautiful UI design.
+                    </p>
+
+                    <h3 class="section-subtitle"
+                        style="font-size: 1.3rem; margin-bottom: 1rem; color: #fff; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-graduation-cap" style="color: var(--accent-1);"></i> Education
+                    </h3>
+                    <div class="education-card"
+                        style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 16px; display: flex; gap: 1rem; align-items: flex-start; transition: all 0.3s ease;">
+                        <div
+                            style="background: rgba(139, 92, 246, 0.15); padding: 12px; border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.3);">
+                            <i class="fa-solid fa-university" style="color: var(--accent-1); font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #fff; font-size: 1.15rem; margin-bottom: 0.3rem; font-weight: 600;">B.Tech
+                                in Computer Science & Artificial Intelligence</h4>
+                            <p
+                                style="color: var(--accent-2); font-weight: 500; font-size: 1rem; margin-bottom: 0.5rem;">
+                                Newton School of Technology, Rishihood University</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Focused on data analytics, machine
+                                learning algorithms, and modern software development practices.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="filter-group">
-                <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
-                <button class="filter-btn" onclick="filterProjects('tableau', this)">Tableau</button>
-                <button class="filter-btn" onclick="filterProjects('python', this)">Python</button>
+
+            <div class="animate-up delay-2">
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-desc">A selection of my recent data analysis and full-stack projects.</p>
             </div>
-        </div>
 
-        <div class="project-grid" id="projectGrid">
-            
-            <!-- Project 1 -->
-            <a href="https://public.tableau.com/app/profile/neeraj.singh1868/viz/Capstone2Dashboard_17769517459070/Dashboard4?publish=yes" target="_blank" class="project-card animate-up delay-4" data-type="tableau">
-                <div class="card-banner" style="background: linear-gradient(135deg, #1e3a8a, #312e81);">
-                    <span>📊</span>
+            <div class="controls animate-up delay-3">
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" class="search-box" placeholder="Search projects, tools...">
                 </div>
-                <div class="card-content">
-                    <div class="project-name">
-                        Zomato Delivery Operations <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                    <p class="project-desc">Diagnostic dashboard sequence analyzing delivery latencies and order volume trends.</p>
-                    <div class="tag-container">
-                        <span class="tag"><i class="fa-solid fa-chart-bar" style="color: #60a5fa;"></i> Tableau</span>
-                        <span class="tag"><i class="fa-solid fa-file-excel" style="color: #34d399;"></i> Excel</span>
-                        <span class="tag">Business Intelligence</span>
-                        <span class="tag">KPI</span>
-                    </div>
+                <div class="filter-group">
+                    <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+                    <button class="filter-btn" onclick="filterProjects('tableau', this)">Tableau</button>
+                    <button class="filter-btn" onclick="filterProjects('python', this)">Python</button>
                 </div>
-            </a>
+            </div>
 
-            <!-- Project 2 -->
-            <a href="https://github.com/Neeraj-singh140805/SectionC_Group09_ExoPlanets" target="_blank" class="project-card animate-up delay-4" data-type="python" style="animation-delay: 0.5s;">
-                <div class="card-banner" style="background: linear-gradient(135deg, #064e3b, #065f46);">
-                    <span>🪐</span>
-                </div>
-                <div class="card-content">
-                    <div class="project-name">
-                        Exoplanet Discovery Analysis <i class="fa-solid fa-arrow-right"></i>
+            <div class="project-grid" id="projectGrid">
+
+                <!-- Project 1 -->
+                <a href="https://public.tableau.com/app/profile/neeraj.singh1868/viz/Capstone2Dashboard_17769517459070/Dashboard4?publish=yes"
+                    target="_blank" class="project-card animate-up delay-4" data-type="tableau">
+                    <div class="card-banner" style="background: linear-gradient(135deg, #1e3a8a, #312e81);">
+                        <span>📊</span>
                     </div>
-                    <p class="project-desc">Python-based EDA on 5,000+ NASA records exploring planetary characteristics using Pandas and Matplotlib.</p>
-                    <div class="tag-container">
-                        <span class="tag"><i class="fa-brands fa-python" style="color: #fbbf24;"></i> Python</span>
-                        <span class="tag">Pandas</span>
-                        <span class="tag">Seaborn</span>
+                    <div class="card-content">
+                        <div class="project-name">
+                            Zomato Delivery Operations <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                        <p class="project-desc">Diagnostic dashboard sequence analyzing delivery latencies and order
+                            volume trends.</p>
+                        <div class="tag-container">
+                            <span class="tag"><i class="fa-solid fa-chart-bar" style="color: #60a5fa;"></i>
+                                Tableau</span>
+                            <span class="tag"><i class="fa-solid fa-file-excel" style="color: #34d399;"></i>
+                                Excel</span>
+                            <span class="tag">Business Intelligence</span>
+                            <span class="tag">KPI</span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-        </div>
-    </main>
-</div>
+                <!-- Project 2 -->
+                <a href="https://github.com/Neeraj-singh140805/SectionC_Group09_ExoPlanets" target="_blank"
+                    class="project-card animate-up delay-4" data-type="python" style="animation-delay: 0.5s;">
+                    <div class="card-banner" style="background: linear-gradient(135deg, #064e3b, #065f46);">
+                        <span>🪐</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="project-name">
+                            Exoplanet Discovery Analysis <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                        <p class="project-desc">Python-based EDA on 5,000+ NASA records exploring planetary
+                            characteristics using Pandas and Matplotlib.</p>
+                        <div class="tag-container">
+                            <span class="tag"><i class="fa-brands fa-python" style="color: #fbbf24;"></i> Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Seaborn</span>
+                        </div>
+                    </div>
+                </a>
 
-<script>
-    // ── DATA VIZ NETWORK ANIMATION ──
-    const canvas = document.getElementById('data-bg');
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    let particles = [];
+            </div>
+        </main>
+    </div>
 
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize);
-    resize();
+    <script>
+        // ── DATA VIZ NETWORK ANIMATION ──
+        const canvas = document.getElementById('data-bg');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
 
-    class Particle {
-        constructor() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 0.8;
-            this.vy = (Math.random() - 0.5) * 0.8;
-            this.radius = Math.random() * 2 + 1;
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
         }
+        window.addEventListener('resize', resize);
+        resize();
 
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.8;
+                this.vy = (Math.random() - 0.5) * 0.8;
+                this.radius = Math.random() * 2 + 1;
+            }
 
-            if (this.x < 0 || this.x > width) this.vx *= -1;
-            if (this.y < 0 || this.y > height) this.vy *= -1;
-        }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
 
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(59, 130, 246, 0.6)'; // Blue points
-            ctx.fill();
-        }
-    }
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
 
-    for (let i = 0; i < 100; i++) {
-        particles.push(new Particle());
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-        
-        particles.forEach(p => {
-            p.update();
-            p.draw();
-        });
-
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-
-                if (dist < 150) {
-                    ctx.beginPath();
-                    ctx.strokeStyle = `rgba(139, 92, 246, ${1 - dist/150})`; // Violet connecting lines
-                    ctx.lineWidth = 0.8;
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.stroke();
-                }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(59, 130, 246, 0.6)'; // Blue points
+                ctx.fill();
             }
         }
 
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    // Initialize Progress Bars with Intersection Observer for scroll animation
-    document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const bar = entry.target;
-                    bar.style.width = bar.getAttribute('data-width');
-                    observer.unobserve(bar); // Only animate once
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.progress-fill').forEach(bar => {
-            observer.observe(bar);
-        });
-    });
-
-    // Filter Logic
-    function filterProjects(type, btn) {
-        // Update Buttons
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        // Filter Grid with smooth transition
-        const cards = document.querySelectorAll('.project-card');
-        cards.forEach(card => {
-            // First fade out
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.95)';
-            
-            setTimeout(() => {
-                if(type === 'all' || card.getAttribute('data-type') === type) {
-                    card.style.display = 'flex';
-                    // Trigger reflow
-                    void card.offsetWidth;
-                    // Fade in
-                    card.style.opacity = '1';
-                    card.style.transform = 'scale(1) translateY(0)';
-                } else {
-                    card.style.display = 'none';
-                }
-            }, 300); // Wait for fade out
-        });
-    }
-
-    // Search Logic
-    document.getElementById('searchInput').addEventListener('input', (e) => {
-        const term = e.target.value.toLowerCase();
-        const cards = document.querySelectorAll('.project-card');
-        
-        // Reset active filter button when searching
-        if(term.length > 0) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            document.querySelector('.filter-btn[onclick*="all"]').classList.add('active');
+        for (let i = 0; i < 100; i++) {
+            particles.push(new Particle());
         }
-        
-        cards.forEach(card => {
-            const text = card.innerText.toLowerCase();
-            if (text.includes(term)) {
-                card.style.display = 'flex';
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'scale(1)';
-                }, 50);
-            } else {
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 150) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(139, 92, 246, ${1 - dist / 150})`; // Violet connecting lines
+                        ctx.lineWidth = 0.8;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Initialize Progress Bars with Intersection Observer for scroll animation
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bar = entry.target;
+                        bar.style.width = bar.getAttribute('data-width');
+                        observer.unobserve(bar); // Only animate once
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.progress-fill').forEach(bar => {
+                observer.observe(bar);
+            });
+        });
+
+        // Filter Logic
+        function filterProjects(type, btn) {
+            // Update Buttons
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Filter Grid with smooth transition
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                // First fade out
                 card.style.opacity = '0';
                 card.style.transform = 'scale(0.95)';
+
                 setTimeout(() => {
-                    card.style.display = 'none';
-                }, 300);
+                    if (type === 'all' || card.getAttribute('data-type') === type) {
+                        card.style.display = 'flex';
+                        // Trigger reflow
+                        void card.offsetWidth;
+                        // Fade in
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1) translateY(0)';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }, 300); // Wait for fade out
+            });
+        }
+
+        // Search Logic
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.project-card');
+
+            // Reset active filter button when searching
+            if (term.length > 0) {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector('.filter-btn[onclick*="all"]').classList.add('active');
             }
+
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if (text.includes(term)) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
+
 </html>
