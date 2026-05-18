@@ -28,8 +28,7 @@ neeraj = {
     "role"      : "Data Analyst & AI Student",
     "institute" : "Newton School of Technology, Rishihood University",
     "batch"     : "2024 – 2028",
-    "focus"     : ["Predictive Modeling", "BI Dashboards", "Data Storytelling"],
-    "philosophy": "A great visualization makes the answer obvious before you've asked the question.",
+    "focus"     : ["Predictive Modeling", "BI Dashboards", "Data Storytelling"]
 }
 ```
 
@@ -102,7 +101,7 @@ Key Find →  Identified the "Kepler Effect": Transit Method accounts for
 | | |
 |---|---|
 | 🎓 **B.Tech — Computer Science & Artificial Intelligence** | *2024 – 2028* |
-| 🏫 Newton School of Technology, Rishihood University | Bahadurgarh, Haryana |
+| 🏫 Newton School of Technology, Rishihood University | Haryana |
 
 ---
 
@@ -116,11 +115,11 @@ Key Find →  Identified the "Kepler Effect": Transit Method accounts for
 
 </div>
 
-<div align="center">
+<!-- <div align="center">
 
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Neeraj-singh140805&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=36BCF7&text_color=C9D1D9&langs_count=6" height="130"/>
 
-</div>
+</div> -->
 
 ---
 
