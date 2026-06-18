@@ -584,6 +584,12 @@ section{padding:100px 0}
 .ov-btn.primary{background:var(--p);color:#fff}
 .ov-btn.primary:hover{box-shadow:0 8px 20px var(--p-glow)}
 .ov-btn.secondary{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff}
+.ov-btn.secondary:hover{
+  background:rgba(255,255,255,.14);
+  border-color:var(--border-h);
+  box-shadow:0 10px 28px rgba(0,0,0,.32);
+  transform:translateY(-6px);
+}
 .proj-body{padding:1.6rem;flex:1;display:flex;flex-direction:column}
 .proj-type{font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--p);margin-bottom:.6rem}
 .proj-name{
@@ -803,6 +809,7 @@ footer{
     <a href="#about" class="nav-link">About</a>
     <a href="#skills" class="nav-link">Skills</a>
     <a href="#projects" class="nav-link">Projects</a>
+    <a href="#achievements" class="nav-link">Achievements</a>
     <a href="#contact" class="nav-link">Contact</a>
   </div>
   <div class="nav-actions">
@@ -897,9 +904,17 @@ footer{
           <div class="profile-socials">
             <a href="https://github.com/Neeraj-singh140805" target="_blank" class="soc-btn" data-tooltip="GitHub"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.linkedin.com/in/neeraj-singh-496205315/" target="_blank" class="soc-btn" data-tooltip="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://public.tableau.com/app/profile/neeraj.singh1868/vizzes"
+              target="_blank"
+              class="soc-btn"
+              data-tooltip="Tableau">
+                <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg"
+                    alt="Tableau"
+                    class="social-icon">
+            </a>
             <a href="mailto:your-email@example.com" class="soc-btn" data-tooltip="Email"><i class="fa-regular fa-envelope"></i></a>
           </div>
-          <a href="NeerajSinghresume (4).pdf" class="download-cv">
+          <a href="NeerajSinghresume (5).pdf" class="download-cv">
             <i class="fa-solid fa-download"></i> Download CV
           </a>
 
@@ -1156,14 +1171,14 @@ footer{
           <div class="proj-name">Future of Work 2030: AI, Jobs, Salaries & Skills Analytics Dashboard<i class="fa-solid fa-arrow-up-right-from-square"></i></div>
           <p class="proj-desc">Designed a multi-dashboard Tableau project analyzing the impact of AI adoption on industries, job growth, automation risk, salary trends, and future workforce skills. Conducted data-driven research to identify high-growth sectors, automation-vulnerable industries, highest-paying skills, and workforce recommendations through interactive visualizations and KPI-driven insights.</p>
           <div class="proj-tags">
-            <span class="ptag">Tableau</span><span class="ptag">Excel</span><span class="ptag">Data Analysis</span><span class="ptag">KPI Analytics</span><span class="ptag">KPI Analysis</span><span class="ptag">Business Intelligence</span>
+            <span class="ptag">Tableau</span><span class="ptag">Excel</span><span class="ptag">Data Analysis</span><span class="ptag">KPI Analysis</span><span class="ptag">Business Intelligence</span>
           </div>
         </div>
       </a>
 
       <!-- P1 -->
       <a href="https://public.tableau.com/app/profile/neeraj.singh1868/viz/Capstone2Dashboard_17769517459070/Dashboard4?publish=yes"
-         target="_blank" class="proj-card card reveal" data-filter="tableau">
+        target="_blank" class="proj-card card reveal" data-filter="tableau python">
         <div class="proj-banner" style="background:linear-gradient(135deg,#1e3a8a,#312e81)">
           <img src="zomato.png" alt="Zomato Delivery Operations" style="width:100%;height:100%;object-fit:cover;border-radius:12px">
           
@@ -1179,7 +1194,7 @@ footer{
           <div class="proj-name">Zomato Delivery Operations<i class="fa-solid fa-arrow-up-right-from-square"></i></div>
           <p class="proj-desc">Diagnostic dashboard sequence analyzing delivery latencies, order volume trends, and restaurant performance KPIs across multiple Indian cities. Enabled 20% faster decision-making for operations teams.</p>
           <div class="proj-tags">
-            <span class="ptag">Tableau</span><span class="ptag">Excel</span><span class="ptag">KPI Analysis</span><span class="ptag">Business Intelligence</span>
+            <span class="ptag">Tableau</span><span class="ptag">Python</span><span class="ptag">Excel</span><span class="ptag">KPI Analysis</span><span class="ptag">Data Analysis</span><span class="ptag">Business Intelligence</span>
           </div>
         </div>
       </a>
@@ -1198,7 +1213,7 @@ footer{
           <div class="proj-name">Netflix Content Trends Dashboard<i class="fa-solid fa-arrow-up-right-from-square"></i></div>
           <p class="proj-desc">Analyzed Netflix's evolving content library — movies vs. shows, genre distribution, release year trends, top directors, and content ratings. Built interactive Tableau dashboard revealing decade-over-decade growth patterns.</p>
           <div class="proj-tags">
-            <span class="ptag">Tableau</span><span class="ptag">Excel</span><span class="ptag">KPI</span><span class="ptag">Content Analytics</span>
+            <span class="ptag">Tableau</span><span class="ptag">Excel</span><span class="ptag">KPI Analysis</span><span class="ptag">Data Analysis</span><span class="ptag">Content Analytics</span>
           </div>
         </div>
       </a>
@@ -1252,40 +1267,51 @@ footer{
 </section>
 
 <!-- ── ACHIEVEMENTS ── -->
-<!-- <section id="achievements">
+<section id="achievements">
   <div class="page-wrap">
     <div style="margin-bottom:3rem">
       <div class="sec-eyebrow reveal">Recognition</div>
       <h2 class="sec-title reveal reveal-delay-1">Certifications & Achievements</h2>
     </div>
     <div class="achieve-grid">
-      <div class="card achieve-card reveal">
+        <div class="card achieve-card reveal">
         <div class="achieve-icon" style="background:rgba(91,138,240,.15);color:var(--p)"><i class="fa-solid fa-certificate"></i></div>
-        <div class="achieve-title">Google Data Analytics</div>
-        <div class="achieve-org">Google / Coursera</div>
-        <div class="achieve-badge" style="background:rgba(91,138,240,.15);color:var(--p);border:1px solid rgba(91,138,240,.3)">Professional Certificate</div>
+        <div class="achieve-title">Deloitte Australia Data Analytics Job Simulation on Forage</div>
+        <div class="achieve-org">Deloitte Australia</div>
+        <div class="achieve-badge" style="background:rgba(91,138,240,.15);color:var(--p);border:1px solid rgba(91,138,240,.3)">Professional Certificate and Achievement</div>
+        
+        <div class="overlay-links">
+          <span class="ov-btn secondary"><i class="fa-brands"></i><a href="https://ibb.co/KpHnYKVK"> View Certificate</a></span>
+        </div>
       </div>
-      <div class="card achieve-card reveal reveal-delay-1">
+        <div class="card achieve-card reveal reveal-delay-1">
         <div class="achieve-icon" style="background:rgba(155,109,255,.15);color:var(--v)"><i class="fa-brands fa-python"></i></div>
-        <div class="achieve-title">Python for Data Science</div>
-        <div class="achieve-org">IBM / Coursera</div>
-        <div class="achieve-badge" style="background:rgba(155,109,255,.15);color:var(--v);border:1px solid rgba(155,109,255,.3)">Specialization</div>
+        <div class="achieve-title">Appnova — Cognizance 2026, IIT Roorkee</div>
+        <div class="achieve-org">IIT Roorkee</div>
+        <div class="achieve-badge" style="background:rgba(155,109,255,.15);color:var(--v);border:1px solid rgba(155,109,255,.3)">Certificate</div>
+        <div class="overlay-links">
+          <span class="ov-btn secondary"><i class="fa-brands"></i><a href="https://ibb.co/DgS2j1gN"> View Certificate</a></span>
+        </div>
       </div>
-      <div class="card achieve-card reveal reveal-delay-2">
+        <div class="card achieve-card reveal reveal-delay-2">
         <div class="achieve-icon" style="background:rgba(45,212,160,.15);color:var(--g)"><i class="fa-solid fa-chart-bar"></i></div>
-        <div class="achieve-title">Tableau Desktop Specialist</div>
-        <div class="achieve-org">Tableau / Salesforce</div>
-        <div class="achieve-badge" style="background:rgba(45,212,160,.15);color:var(--g);border:1px solid rgba(45,212,160,.3)">Badge</div>
+        <div class="achieve-title">AI Hackathon</div>
+        <div class="achieve-org">Newton School of Technology,Rishihood University</div>
+        <div class="achieve-badge" style="background:rgba(45,212,160,.15);color:var(--g);border:1px solid rgba(45,212,160,.3)">Certificate</div>
+        <div class="overlay-links">
+          <span class="ov-btn secondary hover"><i class="fa-brands"></i><a href="https://ibb.co/DH9VXbmy"> View Certificate</a></span>
+        </div>
       </div>
-      <div class="card achieve-card reveal reveal-delay-3">
+      
+      <!-- <div class="card achieve-card reveal reveal-delay-3">
         <div class="achieve-icon" style="background:rgba(245,166,35,.15);color:var(--o)"><i class="fa-solid fa-trophy"></i></div>
         <div class="achieve-title">Top 10 — Academic Hackathon</div>
         <div class="achieve-org">Newton School of Technology</div>
         <div class="achieve-badge" style="background:rgba(245,166,35,.15);color:var(--o);border:1px solid rgba(245,166,35,.3)">Achievement</div>
-      </div>
+      </div> -->
     </div>
   </div>
-</section> -->
+</section>
 
 <!-- ── TESTIMONIALS ── -->
 <section id="testimonials">
@@ -1647,7 +1673,8 @@ document.querySelectorAll('.f-btn').forEach(btn=>{
     btn.classList.add('active');
     const f=btn.dataset.filter;
     document.querySelectorAll('.proj-card').forEach(card=>{
-      const show=f==='all'||card.dataset.filter===f;
+      const cardFilters=(card.dataset.filter||'').toString().split(/\s+/).filter(Boolean);
+      const show = f==='all' || cardFilters.includes(f);
       card.style.opacity='0';card.style.transform='scale(.95)';
       setTimeout(()=>{
         card.style.display=show?'flex':'none';
